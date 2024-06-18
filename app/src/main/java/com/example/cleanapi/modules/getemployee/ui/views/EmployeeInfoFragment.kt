@@ -45,6 +45,7 @@ class EmployeeInfoFragment : Fragment() {
     private fun collectEmployeeFlow() {
         lifecycleScope.launch {
             viewModel.employeeFlow.collect {
+		// Feature 1 added
                 binding.employeeName.text = "Name : ${it.firstName} ${it.lastName}"
                 binding.employeeAge.text = "Age : ${it.age}"
                 binding.employeeAddress.text = "Address : ${it.address.city}"
