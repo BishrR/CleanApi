@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/getEmployeesFragment">
+
+    <fragment
+        android:id="@+id/employeeInfoFragment"
+        android:name="com.example.cleanapi.modules.getemployee.ui.views.EmployeeInfoFragment"
+        android:label="fragment_employee_info"
+        tools:layout="@layout/fragment_employee_info" >
+        <argument
+            android:name="employee_id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/getEmployeesFragment"
+        android:name="com.example.cleanapi.modules.getemployee.ui.views.EmployeesFragment"
+        android:label="fragment_get_employees"
+        tools:layout="@layout/fragment_employees" >
+        <action
+            android:id="@+id/action_getEmployeesFragment_to_employeeInfoFragment"
+            app:destination="@id/employeeInfoFragment" />
+    </fragment>
+</navigation>
